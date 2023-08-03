@@ -5,8 +5,16 @@ import React, { useState, useCallback } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
-import { useForm, FieldValues, SubmitHandler } from "react-hook-form";
+import {
+  useForm,
+  FieldValues,
+  SubmitHandler,
+  RegisterOptions,
+  UseFormRegisterReturn,
+} from "react-hook-form";
 import Modal from "./Modal";
+import Heading from "../Heading";
+import Input from "../inputs/Input";
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -40,14 +48,30 @@ const RegisterModal = () => {
         setIsLoading(false);
       });
   };
+
+  const bodyContent = (
+    <div className="flex flex-col gap-4">
+      <Heading title="Pham Quy" subTitle="Pham Nguyen" center />
+      <Input
+        id="email"
+        label="Email"
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+      />
+    </div>
+  );
+
   return (
     <Modal
       disabled={isLoading}
       isOpen={registerModal.isOpen}
       title="Register"
-      actionLabel="Continue"
+      actionLabel="Register"
       onClose={registerModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
+      body={bodyContent}
     />
   );
 };
