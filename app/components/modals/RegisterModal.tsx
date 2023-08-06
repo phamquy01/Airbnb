@@ -51,10 +51,26 @@ const RegisterModal = () => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <Heading title="Pham Quy" subTitle="Pham Nguyen" center />
+      <Heading title="Create new account" subTitle="register" center />
       <Input
         id="email"
         label="Email"
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+      />
+      <Input
+        id="name"
+        label="Name"
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+      />
+      <Input
+        id="password"
+        label="Password"
         disabled={isLoading}
         register={register}
         errors={errors}
