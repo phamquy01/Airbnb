@@ -40,7 +40,14 @@ const Input: React.FC<InputProps> = ({
         className={`
             peer 
             w-full 
-            p-4 pt-6 font-light bg-white border-2 outline-none transition disabled:opacity-70
+            p-4 
+            pt-6 
+            font-light 
+            bg-white 
+            border-2
+            outline-none 
+            transition 
+            disabled:opacity-70
             ${formatPrice ? "pl-9" : "pl-4"}
             ${errors[id] ? "border-rose-500" : "border-neutral-300"}
             ${errors[id] ? "focus:border-rose-500" : "focus:border-rose-black"}
