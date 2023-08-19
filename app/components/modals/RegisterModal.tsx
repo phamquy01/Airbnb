@@ -48,34 +48,34 @@ const RegisterModal = () => {
         setIsLoading(false);
       });
   };
-
+  console.log(handleSubmit(onSubmit));
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Heading title="Welcom to Airbnb" subTitle="Create an account" />
       <Input
+        required
         id="email"
         label="Email"
         disabled={isLoading}
         register={register}
         errors={errors}
-        required
       />
       <Input
+        required
         id="name"
         label="Name"
         disabled={isLoading}
         register={register}
         errors={errors}
-        required
       />
       <Input
+        required
         id="password"
         type="password"
         label="Password"
         disabled={isLoading}
         register={register}
         errors={errors}
-        required
       />
     </div>
   );

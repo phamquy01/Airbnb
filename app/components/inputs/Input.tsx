@@ -2,6 +2,7 @@
 
 import { UseFormRegister, FieldValues, FieldErrors } from "react-hook-form";
 import { BiDollar } from "react-icons/bi";
+
 interface InputProps {
   id: string;
   label: string;
@@ -23,6 +24,8 @@ const Input: React.FC<InputProps> = ({
   register,
   errors,
 }) => {
+  console.log(errors[id]);
+
   return (
     <div className="w-full relative">
       {formatPrice && (
@@ -45,12 +48,14 @@ const Input: React.FC<InputProps> = ({
             font-light 
             bg-white 
             border-2
+            rounded-md
             outline-none
             transition 
             disabled:opacity-70
+            disabled:cursor-not-allowed
             ${formatPrice ? "pl-9" : "pl-4"}
             ${errors[id] ? "border-rose-500" : "border-neutral-300"}
-            ${errors[id] ? "focus:border-rose-500" : "focus:border-rose-black"}
+            ${errors[id] ? "focus:border-rose-500" : "focus:border-black"}
         `}
       />
       <label
