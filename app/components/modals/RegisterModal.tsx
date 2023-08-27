@@ -35,7 +35,6 @@ const RegisterModal = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
-
     axios
       .post("/api/register", data)
       .then(() => {
@@ -48,7 +47,6 @@ const RegisterModal = () => {
         setIsLoading(false);
       });
   };
-  console.log(handleSubmit(onSubmit));
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Heading title="Welcom to Airbnb" subTitle="Create an account" />
